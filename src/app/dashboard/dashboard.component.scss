@@ -1,0 +1,14 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-header-cell {
+    background: rgb(116, 143, 131);
+}
+thead tr:first-child th{
+  background: rgb(116, 143, 131);
+}
+  tr:nth-child(even) {
+    background-color: #8d8f932e;
+    color: #9e9c9c;
+    border-radius: 12px;
+}

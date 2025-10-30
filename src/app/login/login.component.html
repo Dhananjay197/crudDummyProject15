@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center loginhead">
+          <h1>Login</h1>
+          <h4>Please enter email and password !!</h4>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="loginFormData()">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <mat-error *ngIf="(loginForm.controls['email'].hasError('required') && submitted)" style="color: red;">It is
+              required field</mat-error>
+
+          </div>
+          <div class="mb-3 passwordmask">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input  [type]="password" class="form-control" id="userPasswords" formControlName="userPasswords">
+            <div class="passwordeye" (click)="onClick()">
+              <i alt="show" class="fa fa-eye eye-show"  *ngIf="show"></i>
+              <i alt="hide" class="fa fa-eye-slash eye-hide" *ngIf="!show"></i>
+            </div>
+            <mat-error *ngIf="(loginForm.controls['userPasswords'].hasError('required') && submitted)"
+              style="color: rgb(209, 70, 70);">It is
+              required field</mat-error>
+          </div>
+          <!-- <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="checkboxx" formControlName="checkboxx">
+            <mat-error *ngIf="(loginForm.controls['checkboxx'].hasError('required') && submitted)"
+              style="color: red;">It is
+              required field</mat-error>
+          </div> -->
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <a style="color: #ffff; margin-top: 10px; text-decoration: none !important;" routerLink="/signup">New User? Click to Register !!</a>
+        <!-- <a  (click)="googleLogin()" style="padding: 1rem; background-color: #ccc7e2; cursor: pointer;  text-decoration: none !important;" class="mt-2">
+         
+          Login With Google
+        </a>  -->
+        <!-- <button (click)="googleLogin()" type="button" class="login-with-google-btn mt-2" >
+          Sign in with Google
+        </button> -->
+       
+      </div>
+    </div>
+  </div>
+</div>

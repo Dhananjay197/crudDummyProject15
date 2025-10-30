@@ -1,0 +1,129 @@
+{
+  "productList": [
+    {
+      "productName": "all vegies",
+      "category": "Apple",
+      "freshness": "fresh",
+      "price": 22222,
+      "comment": "sad",
+      "date": "2023-06-06T18:30:00.000Z",
+      "id": 25
+    },
+    {
+      "productName": "high quality",
+      "category": "Grapes",
+      "freshness": "fresh",
+      "price": 546,
+      "comment": "tyt",
+      "date": "2023-06-08T18:30:00.000Z",
+      "id": 26
+    },
+    {
+      "productName": "gangster ",
+      "category": "Grapes",
+      "freshness": "fresh",
+      "price": 22234,
+      "comment": "fdssd",
+      "date": "2023-06-07T18:30:00.000Z",
+      "id": 27
+    },
+    {
+      "productName": "dadd",
+      "category": "Apple",
+      "freshness": "fresh",
+      "price": 313,
+      "comment": "zczc",
+      "date": "2023-12-05T18:30:00.000Z",
+      "id": 28
+    },
+    {
+      "productName": "sdq",
+      "category": "Fruits",
+      "freshness": "fresh",
+      "price": 98,
+      "comment": "hiyo",
+      "date": "2024-10-16T18:30:00.000Z",
+      "id": 30
+    },
+    {
+      "productName": "vegitable",
+      "category": "Fruits",
+      "freshness": "fresh",
+      "price": 7878,
+      "comment": "jgajgjs",
+      "date": "2025-09-16T18:30:00.000Z",
+      "id": 31
+    },
+    {
+      "productName": "best quality",
+      "category": "Fruits",
+      "freshness": "fresh",
+      "price": 7889,
+      "comment": "for sell",
+      "date": "2025-09-02T18:30:00.000Z",
+      "id": 32
+    }
+  ],
+  "signupUsers": [
+    {
+      "fname": "dhananajy singh",
+      "mobile": 213241,
+      "email": "dhan@gmail.com",
+      "userPasswords": "poooouieuiw",
+      "checkboxx": false,
+      "id": 2
+    },
+    {
+      "fname": "",
+      "mobile": "",
+      "email": "",
+      "userPasswords": "",
+      "checkboxx": false,
+      "id": 3
+    },
+    {
+      "email": "dhan@gmail.com",
+      "userPasswords": "fgrh",
+      "checkboxx": true,
+      "id": 9
+    },
+    {
+      "fname": "dhan Sinh",
+      "mobile": 67868678687687690000,
+      "email": "",
+      "userPasswords": "",
+      "id": 10
+    },
+    {
+      "fname": "dhan",
+      "mobile": 987987,
+      "email": "sjh@gmail.com",
+      "userPasswords": "jhgjss",
+      "id": 11
+    },
+    {
+      "fname": "dhah singj",
+      "mobile": "8989898999",
+      "email": "jagsdj@gmail.com",
+      "userPasswords": "zjfhj",
+      "id": 12
+    },
+    {
+      "fname": "",
+      "mobile": "",
+      "email": "",
+      "userPasswords": "",
+      "id": 13
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

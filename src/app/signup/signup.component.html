@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Sign Up</h1>
+          <h6>Register Yourself !!</h6>
+        </div>
+        <form [formGroup]="signupPage" (ngSubmit)="pageSignup()">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+            <input type="email" pattern="/^[A-Za-z]+$/" class="form-control" id="fname" formControlName="fname">
+            <mat-error *ngIf="(signupPage.controls['fname'].hasError('required') && submitted)" style="color: red;">It
+              is
+              required field</mat-error>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputMobile1" class="form-label">Mobile number</label>
+            <input type="text" class="form-control" id="mobile" formControlName="mobile" maxlength="10"
+              pattern="[0-9]*">
+            <mat-error *ngIf="(signupPage.controls['mobile'].hasError('required') && submitted)" style="color: red;">It
+              is
+              required field</mat-error>
+            <mat-error *ngIf="signupPage.controls['mobile'].hasError('minlength') || signupPage.controls['mobile'].hasError('maxlength')">
+    Mobile number must be 10 digits
+  </mat-error>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <mat-error *ngIf="(signupPage.controls['email'].hasError('required') && submitted)" style="color: red;">It
+              is
+              required field</mat-error>
+          </div>
+          <div class="mb-3 passwordmask">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="userPasswords" formControlName="userPasswords">
+            <div class="passwordeye" (click)="onClick()">
+              <i alt="show" class="fa fa-eye eye-show" *ngIf="show"></i>
+              <i alt="hide" class="fa fa-eye-slash eye-hide" *ngIf="!show"></i>
+            </div>
+            <mat-error *ngIf="(signupPage.controls['userPasswords'].hasError('required') && submitted)"
+              style="color: red;">It is
+              required field</mat-error>
+          </div>
+          <!-- <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="checkboxx" formControlName="checkboxx">
+                      <mat-error *ngIf="(signupPage.controls['checkboxx'].hasError('required') && submitted)" style="color: red;">It is
+                        required field</mat-error>
+                    
+                    </div> -->
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <a style="color: #ffff; margin-top: 10px;" routerLink="/login">Already Registered? Click to login !!</a>
+
+      </div>
+    </div>
+  </div>
+</div>
