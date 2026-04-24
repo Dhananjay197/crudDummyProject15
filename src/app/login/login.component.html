@@ -31,6 +31,11 @@
               style="color: red;">It is
               required field</mat-error>
           </div> -->
+          <img [src]="captchaImage" style="height:60px" />
+<button mat-button (click)="getCaptcha()">Refresh</button>
+
+<input type="text" formControlName="captchaText" placeholder="Enter CAPTCHA text">
+
           <button type="submit" class="btn btn-primary">Login</button>
         </form>
         <a style="color: #ffff; margin-top: 10px; text-decoration: none !important;" routerLink="/signup">New User? Click to Register !!</a>

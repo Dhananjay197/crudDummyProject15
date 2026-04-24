@@ -1,0 +1,94 @@
+<div class="container my-5">
+
+  <!-- 🔹 Form Card -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Dynamic Form</h4>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+
+        <div class="row g-3">
+          <div class="col-md-6" *ngFor="let field of formFields">
+
+            <label class="form-label fw-semibold">
+              {{ field.label }}
+            </label>
+
+            <!-- Text / Email -->
+            <input *ngIf="field.type !== 'number'"
+                   class="form-control"
+                   [type]="field.type"
+                   [formControlName]="field.name"
+                   [ngClass]="{'is-invalid': dynamicForm.get(field.name)?.invalid && dynamicForm.get(field.name)?.touched}" />
+
+            <!-- Number -->
+            <input *ngIf="field.type === 'number'"
+                   type="number"
+                   class="form-control"
+                   [formControlName]="field.name"
+                   [ngClass]="{'is-invalid': dynamicForm.get(field.name)?.invalid && dynamicForm.get(field.name)?.touched}" />
+
+            <!-- Validation -->
+            <div class="invalid-feedback">
+              {{ field.label }} is required
+            </div>
+
+          </div>
+        </div>
+
+        <div class="text-end mt-4">
+          <button class="btn btn-primary px-4" type="submit">
+            Submit
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- 🔹 Table Card -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+      <h4 class="mb-0">Submitted Data</h4>
+    </div>
+
+    <div class="card-body">
+
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle text-center">
+
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of submittedList; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.age }}</td>
+            </tr>
+
+            <!-- Empty State -->
+            <tr *ngIf="submittedList.length === 0">
+              <td colspan="4" class="text-muted">
+                No data available
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>

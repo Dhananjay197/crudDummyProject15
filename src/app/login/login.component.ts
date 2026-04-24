@@ -13,6 +13,7 @@ import { IdleTimeoutServiceService } from '../shared/idle-timeout-service.servic
 export class LoginComponent implements OnInit{
   password: any;
   show = false;
+  captchaImage:any;
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit{
   }
   ngOnInit(): void {
     this.password = 'password';
+      this.getCaptcha();
   }
   loginForm!:FormGroup;
   submitted:boolean = false;
@@ -47,6 +49,20 @@ export class LoginComponent implements OnInit{
   get f(): { [key: string]: AbstractControl } {
     return this.loginForm.controls
   }
+  getCaptcha() {
+  this.http.get('https://demo.he.nic.in/icssrApi/api/auth/captcha', { responseType: 'blob' })
+  .subscribe((res: Blob) => {
+    this.createImageFromBlob(res);
+  });
+}
+
+createImageFromBlob(image: Blob) {
+  const reader = new FileReader();
+  reader.readAsDataURL(image);
+  reader.onload = () => {
+    this.captchaImage = reader.result;
+  };
+}
   loginFormData():void{
     
     this.submitted=true; 
@@ -72,4 +88,5 @@ if(this.loginForm.valid){
   });
 }
   }
+  
 }

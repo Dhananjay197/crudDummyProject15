@@ -33,6 +33,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatCardModule} from '@angular/material/card';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { IdleTimeoutServiceService } from './shared/idle-timeout-service.service';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { DynamicRowFormComponent } from './dynamic-row-form/dynamic-row-form.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { IdleTimeoutServiceService } from './shared/idle-timeout-service.service
     SignupComponent,
     DashboardComponent,
     ConfirmDailogComponent,
+    DynamicFormComponent,
+    DynamicRowFormComponent,
   
   ],
   imports: [
@@ -67,6 +71,7 @@ import { IdleTimeoutServiceService } from './shared/idle-timeout-service.service
     MatCheckboxModule,
     MatStepperModule,
     MatCardModule,
+   
     
   ],
   providers: [SharedService,

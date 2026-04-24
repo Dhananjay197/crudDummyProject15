@@ -25,4 +25,17 @@ export class ApiService {
     debugger;
     return this.http.get<any>("http://localhost:3000/signupUsers/",data);
   } 
+
+
+  // dyanamic form api
+    getFormConfig() {
+    return this.http.get<any[]>("http://localhost:3000/formConfig");
+  }
+
+  submitForm(data: any) {
+    return this.http.post("http://localhost:3000/submissions", data);
+  }
+  getSubmissions() {
+    return this.http.get<any[]>(`http://localhost:3000/submissions`);
+  }
 }

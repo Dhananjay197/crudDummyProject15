@@ -1,0 +1,52 @@
+<div class="container mt-4">
+
+  <div class="card p-3 mb-3">
+    <h5>Create Dynamic Fields</h5>
+
+    <div *ngFor="let row of fieldRows; let i = index" class="row mb-3 align-items-center">
+
+      <!-- Label -->
+      <div class="col-md-3">
+        <input class="form-control"
+               placeholder="Enter Label"
+               [(ngModel)]="row.label"
+               name="label{{i}}">
+      </div>
+
+      <!-- Type -->
+      <div class="col-md-3">
+        <select class="form-control"
+                [(ngModel)]="row.type"
+                name="type{{i}}">
+          <option value="text">Text</option>
+          <option value="number">Number</option>
+          <option value="date">Date</option>
+        </select>
+      </div>
+
+      <!-- Dynamic Input Based on Type -->
+      <div class="col-md-4">
+        <input class="form-control"
+               [type]="row.type"
+               [(ngModel)]="row.value"
+               name="value{{i}}"
+               [placeholder]="'Enter ' + row.label">
+      </div>
+
+      <!-- Add Button -->
+      <div class="col-md-2">
+        <button class="btn btn-primary w-100" (click)="addRow()">+</button>
+      </div>
+
+    </div>
+
+    <button class="btn btn-success mt-2" (click)="onSubmit()">Submit</button>
+  </div>
+
+  <!-- Output -->
+  <div class="card p-3" *ngIf="submittedData.length">
+    <h5>Saved Data</h5>
+    <pre>{{ submittedData | json }}</pre>
+  </div>
+
+</div>

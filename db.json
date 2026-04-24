@@ -125,5 +125,39 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "formConfig": [
+    {
+      "type": "text",
+      "label": "Name",
+      "name": "name",
+      "value": ""
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "name": "email",
+      "value": ""
+    },
+    {
+      "type": "number",
+      "label": "Age",
+      "name": "age",
+      "value": ""
+    }
+  ],
+  "submissions": [
+    {
+      "name": "dhanjay",
+      "email": "dhan@gmail.com",
+      "age": 28,
+      "id": 1
+    },
+    {
+      "name": "abcd",
+      "email": "asc@gmai.com",
+      "age": 23,
+      "id": 2
+    }
+  ]
 }
